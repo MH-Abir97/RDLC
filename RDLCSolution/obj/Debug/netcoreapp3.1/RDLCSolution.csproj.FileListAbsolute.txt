@@ -1,0 +1,15 @@
+F:\RDLC\RdlReport\RDLCSolution\bin\Debug\netcoreapp3.1\RDLCSolution.exe
+F:\RDLC\RdlReport\RDLCSolution\bin\Debug\netcoreapp3.1\RDLCSolution.deps.json
+F:\RDLC\RdlReport\RDLCSolution\bin\Debug\netcoreapp3.1\RDLCSolution.runtimeconfig.json
+F:\RDLC\RdlReport\RDLCSolution\bin\Debug\netcoreapp3.1\RDLCSolution.runtimeconfig.dev.json
+F:\RDLC\RdlReport\RDLCSolution\bin\Debug\netcoreapp3.1\RDLCSolution.dll
+F:\RDLC\RdlReport\RDLCSolution\bin\Debug\netcoreapp3.1\RDLCSolution.pdb
+F:\RDLC\RdlReport\RDLCSolution\obj\Debug\netcoreapp3.1\RDLCSolution.csprojAssemblyReference.cache
+F:\RDLC\RdlReport\RDLCSolution\obj\Debug\netcoreapp3.1\RDLCSolution.Form1.resources
+F:\RDLC\RdlReport\RDLCSolution\obj\Debug\netcoreapp3.1\RDLCSolution.csproj.GenerateResource.cache
+F:\RDLC\RdlReport\RDLCSolution\obj\Debug\netcoreapp3.1\RDLCSolution.csproj.CoreCompileInputs.cache
+F:\RDLC\RdlReport\RDLCSolution\obj\Debug\netcoreapp3.1\RDLCSolution.AssemblyInfoInputs.cache
+F:\RDLC\RdlReport\RDLCSolution\obj\Debug\netcoreapp3.1\RDLCSolution.AssemblyInfo.cs
+F:\RDLC\RdlReport\RDLCSolution\obj\Debug\netcoreapp3.1\RDLCSolution.dll
+F:\RDLC\RdlReport\RDLCSolution\obj\Debug\netcoreapp3.1\RDLCSolution.pdb
+F:\RDLC\RdlReport\RDLCSolution\obj\Debug\netcoreapp3.1\RDLCSolution.genruntimeconfig.cache

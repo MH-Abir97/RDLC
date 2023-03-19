@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Dataset\dsEmployee.cs" />
+    <Content Remove="wwwroot\Dataset\dsEmployee.Designer.cs" />
+    <Content Remove="wwwroot\Dataset\dsEmployee.xsc" />
+    <Content Remove="wwwroot\Dataset\dsEmployee.xsd" />
+    <Content Remove="wwwroot\Dataset\dsEmployee.xss" />
+    <Content Remove="wwwroot\Dataset\dsEmployeeDetails.Designer.cs" />
+    <Content Remove="wwwroot\Dataset\dsEmployeeDetails.xsc" />
+    <Content Remove="wwwroot\Dataset\dsEmployeeDetails.xsd" />
+    <Content Remove="wwwroot\Dataset\dsEmployeeDetails.xss" />
+    <Content Remove="wwwroot\Reports\rptEmployee.rdlc" />
+    <Content Remove="wwwroot\Reports\rptEmployeeDetails.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="wwwroot\Dataset\dsEmployee.cs" />
+    <Compile Include="wwwroot\Dataset\dsEmployee.Designer.cs">
+      <DependentUpon>dsEmployee.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="wwwroot\Dataset\dsEmployeeDetails.Designer.cs">
+      <DependentUpon>dsEmployeeDetails.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.17" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Dataset\dsEmployee.xsc" />
+    <None Include="wwwroot\Dataset\dsEmployee.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>dsEmployee.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Dataset\dsEmployee.xss" />
+    <None Include="wwwroot\Dataset\dsEmployeeDetails.xsc" />
+    <None Include="wwwroot\Dataset\dsEmployeeDetails.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>dsEmployeeDetails.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Dataset\dsEmployeeDetails.xss" />
+    <None Include="wwwroot\Reports\rptEmployee.rdlc" />
+    <None Include="wwwroot\Reports\rptEmployeeDetails.rdlc" />
+  </ItemGroup>
+
+</Project>
