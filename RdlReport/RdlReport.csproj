@@ -5,31 +5,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\Dataset\dsEmployee.cs" />
-    <Content Remove="wwwroot\Dataset\dsEmployee.Designer.cs" />
-    <Content Remove="wwwroot\Dataset\dsEmployee.xsc" />
-    <Content Remove="wwwroot\Dataset\dsEmployee.xsd" />
-    <Content Remove="wwwroot\Dataset\dsEmployee.xss" />
-    <Content Remove="wwwroot\Dataset\dsEmployeeDetails.Designer.cs" />
-    <Content Remove="wwwroot\Dataset\dsEmployeeDetails.xsc" />
-    <Content Remove="wwwroot\Dataset\dsEmployeeDetails.xsd" />
-    <Content Remove="wwwroot\Dataset\dsEmployeeDetails.xss" />
+    <Content Remove="Dataset\dsEmployee.cs" />
+    <Content Remove="Dataset\dsEmployee.Designer.cs" />
+    <Content Remove="Dataset\dsEmployee.xsc" />
+    <Content Remove="Dataset\dsEmployee.xsd" />
+    <Content Remove="Dataset\dsEmployee.xss" />
+    <Content Remove="Dataset\dsEmployeeDetails.Designer.cs" />
+    <Content Remove="Dataset\dsEmployeeDetails.xsc" />
+    <Content Remove="Dataset\dsEmployeeDetails.xsd" />
+    <Content Remove="Dataset\dsEmployeeDetails.xss" />
+    <Content Remove="wwwroot\Reports\rptDepartment.rdlc" />
+    <Content Remove="wwwroot\Reports\rptDepartmentBase.rdlc" />
     <Content Remove="wwwroot\Reports\rptEmployee.rdlc" />
+    <Content Remove="wwwroot\Reports\rptEmployeeBase.rdlc" />
+    <Content Remove="wwwroot\Reports\rptEmployeeDemoDetails.rdlc" />
     <Content Remove="wwwroot\Reports\rptEmployeeDetails.rdlc" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="wwwroot\Dataset\dsEmployee.cs" />
-    <Compile Include="wwwroot\Dataset\dsEmployee.Designer.cs">
-      <DependentUpon>dsEmployee.xsd</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="wwwroot\Dataset\dsEmployeeDetails.Designer.cs">
-      <DependentUpon>dsEmployeeDetails.xsd</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -37,22 +27,58 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Dataset\dsEmployee.xsc" />
-    <None Include="wwwroot\Dataset\dsEmployee.xsd">
+    <None Include="wwwroot\Reports\rptDepartment.rdlc" />
+    <None Include="wwwroot\Reports\rptDepartmentBase.rdlc" />
+    <None Include="wwwroot\Reports\rptEmployee.rdlc" />
+    <None Include="wwwroot\Reports\rptEmployeeBase.rdlc" />
+    <None Include="wwwroot\Reports\rptEmployeeDemoDetails.rdlc" />
+    <None Include="wwwroot\Reports\rptEmployeeDetails.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Dataset\Department_DS.Designer.cs">
+      <DependentUpon>Department_DS.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dataset\dsEmployee.Designer.cs">
+      <DependentUpon>dsEmployee.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dataset\dsEmployeeDetails.Designer.cs">
+      <DependentUpon>dsEmployeeDetails.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dataset\EmployeeDemo_DS.Designer.cs">
+      <DependentUpon>EmployeeDemo_DS.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Dataset\Department_DS.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>Department_DS.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Update="Dataset\dsEmployee.xsd">
       <SubType>Designer</SubType>
       <LastGenOutput>dsEmployee.Designer.cs</LastGenOutput>
       <Generator>MSDataSetGenerator</Generator>
     </None>
-    <None Include="wwwroot\Dataset\dsEmployee.xss" />
-    <None Include="wwwroot\Dataset\dsEmployeeDetails.xsc" />
-    <None Include="wwwroot\Dataset\dsEmployeeDetails.xsd">
+    <None Update="Dataset\dsEmployeeDetails.xsd">
       <SubType>Designer</SubType>
       <LastGenOutput>dsEmployeeDetails.Designer.cs</LastGenOutput>
       <Generator>MSDataSetGenerator</Generator>
     </None>
-    <None Include="wwwroot\Dataset\dsEmployeeDetails.xss" />
-    <None Include="wwwroot\Reports\rptEmployee.rdlc" />
-    <None Include="wwwroot\Reports\rptEmployeeDetails.rdlc" />
+    <None Update="Dataset\EmployeeDemo_DS.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>EmployeeDemo_DS.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
   </ItemGroup>
 
 </Project>

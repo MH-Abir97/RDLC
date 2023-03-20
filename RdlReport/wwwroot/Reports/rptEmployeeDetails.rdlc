@@ -44,10 +44,10 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.14583in</Width>
+                  <Width>1.20833in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.89583in</Width>
+                  <Width>1.13541in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -211,10 +211,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsEmployeeDetails</DataSetName>
-            <Top>0.57167in</Top>
+            <Top>0.23834in</Top>
             <Left>0.19667in</Left>
             <Height>0.5in</Height>
-            <Width>6.04167in</Width>
+            <Width>2.34374in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -222,10 +222,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>0.94792in</Height>
         <Style />
       </Body>
-      <Width>6.5in</Width>
+      <Width>3.10417in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
@@ -238,6 +238,7 @@
   <ReportParameters>
     <ReportParameter Name="EmpId">
       <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>

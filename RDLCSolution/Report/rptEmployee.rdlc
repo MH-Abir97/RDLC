@@ -342,7 +342,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Subreport Name="Subreport1">
+                        <Subreport Name="rptEmployeeDetails">
                           <ReportName>rptEmployeeDetails</ReportName>
                           <Parameters>
                             <Parameter Name="EmpId">
@@ -451,8 +451,10 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!param1.Value</Value>
-                      <Style />
+                      <Value>=Parameters!prm1.Value</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
@@ -502,7 +504,7 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="param1">
+    <ReportParameter Name="prm1">
       <DataType>String</DataType>
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
@@ -516,7 +518,7 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>param1</ParameterName>
+          <ParameterName>prm1</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

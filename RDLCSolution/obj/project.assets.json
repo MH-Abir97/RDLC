@@ -8,23 +8,26 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Anwar\\.nuget\\packages\\": {},
+    "C:\\Users\\mhabi\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\RDLC\\RdlReport\\RDLCSolution\\RDLCSolution.csproj",
+      "projectUniqueName": "E:\\Report\\RDLC\\RDLCSolution\\RDLCSolution.csproj",
       "projectName": "RDLCSolution",
-      "projectPath": "F:\\RDLC\\RdlReport\\RDLCSolution\\RDLCSolution.csproj",
-      "packagesPath": "C:\\Users\\Anwar\\.nuget\\packages\\",
-      "outputPath": "F:\\RDLC\\RdlReport\\RDLCSolution\\obj\\",
+      "projectPath": "E:\\Report\\RDLC\\RDLCSolution\\RDLCSolution.csproj",
+      "packagesPath": "C:\\Users\\mhabi\\.nuget\\packages\\",
+      "outputPath": "E:\\Report\\RDLC\\RDLCSolution\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Anwar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mhabi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -32,10 +35,11 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://packagesource": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -47,6 +51,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "imports": [
           "net461",
           "net462",
@@ -65,7 +70,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -14,6 +14,30 @@ namespace RdlReport.Controllers
 {
     public class HomeController : Controller
     {
+        private List<EmployeeDemo> GetEmployeeDemoList = new List<EmployeeDemo>()
+        {
+                new EmployeeDemo() {ID = 1, Name = "Sam", Gender ="male", Email="sam@gmail.com"},
+                new EmployeeDemo() {ID = 1, Name = "Ella",Gender ="female", Email="Ella@gmail.com" },
+                new EmployeeDemo() {ID = 1, Name = "TG",Gender ="male", Email ="TG@gmail.com" },
+                new EmployeeDemo() {ID = 1, Name = "Favor",Gender ="female", Email="Favor@gmail.com" },
+                new EmployeeDemo() {ID = 2,Name = "Micheal",Gender ="male",Email ="Micheal@gmail.com" },
+                new EmployeeDemo() {ID = 2, Name = "Joe",Gender ="male", Email ="Joe@gmail.com" },
+                new EmployeeDemo() {ID = 2, Name="Maintain",Gender ="female",Email ="Maintain@gmail.com" },
+                new EmployeeDemo() {ID = 3, Name = "Akeem",Gender ="male", Email ="Akeem@gmail.com" },
+                new EmployeeDemo() {ID = 3, Name = "Boye",Gender ="male", Email ="Boye@gmail.com" },
+                new EmployeeDemo() {ID = 4, Name ="Chioma",Gender ="female",Email ="Chioma@gmail.com" },
+                new EmployeeDemo() {ID = 4, Name = "Ofure",Gender ="female", Email ="Ofure@gmail.com" },
+                new EmployeeDemo() {ID = 4, Name = "Hart",Gender ="male",Email ="Hart@gmail.com" }
+        };
+
+        private List<Department> departments = new List<Department>()
+        {
+               new Department() {ID = 1, Name = "Applied Mathematics" },
+               new Department() {ID = 2, Name = "Software" },
+               new Department() {ID = 3, Name = "Machine Learning" },
+               new Department() {ID = 4, Name = "Petroleum Engineering" },
+        };
+
         private readonly ILogger<HomeController> _logger;
         private readonly IWebHostEnvironment _webHostEnviorment;
 
@@ -43,16 +67,16 @@ namespace RdlReport.Controllers
         }
 
         public IActionResult PrintReport()
-        {
+         {
             string renderFromat = "PDF";
             string extension = "pdf";
             string mimetype = "application/pdf";
             using var report = new LocalReport();
-            var dt = new DataTable();
-            dt = GetEmployeeList();
-            report.DataSources.Add(new ReportDataSource("dsEmployee", dt));
-            var parameters = new[] { new ReportParameter("param1", "RDLC Sub-Report Example") };
-            report.ReportPath = $"{this._webHostEnviorment.WebRootPath}\\Reports\\rptEmployee.rdlc";
+          //  var dt = new DataTable();
+            var  dt =departments;
+            report.DataSources.Add(new ReportDataSource("Department_DS", dt));
+            var parameters = new[] { new ReportParameter("prm1", "RDLC Sub-Report Example") };
+            report.ReportPath = $"{this._webHostEnviorment.WebRootPath}\\Reports\\rptDepartment.rdlc";
             report.SetParameters(parameters);
 
             //For Sub Type =======>>>
@@ -64,9 +88,17 @@ namespace RdlReport.Controllers
 
         void subReportProcessing(object sender,SubreportProcessingEventArgs e)
         {
-            int empId = int.Parse(e.Parameters["EmpId"].Values[0].ToString());
-            var dt2 = GetEmployeeDetailsList().Select("EmpId=" + empId);
-            ReportDataSource ds = new ReportDataSource("dsEmployeeDetails",dt2);
+            var ID = Convert.ToInt32(e.Parameters[0].Values[0]);
+          //  var employeegroup = Employees.FindAll(x => x.ID == ID);
+
+           int empId = Convert.ToInt32((e.Parameters["ID"].Values[0].ToString()));
+            //var dt2 = GetEmployeeDetailsList().Select("EmpId=" + empId);
+
+            var dt = GetEmployeeDemoList;
+
+            var result = dt.FindAll(x => x.ID == empId);
+            var res = result;
+            ReportDataSource ds = new ReportDataSource("EmployeeDemo_DS", result);
             e.DataSources.Add(ds);
         }
         public DataTable GetEmployeeDetailsList()
@@ -108,5 +140,66 @@ namespace RdlReport.Controllers
             }
             return dt;
         }
+
+        public List<Employee> GetEmployee = new List<Employee>()
+        {
+                new Employee{EmpId=1,EmpName="Abir",Department="Software",Designation="Asso. Software Enginner"},
+                new Employee{EmpId=2,EmpName="Nayeem",Department="Software",Designation="Software Enginner"},
+                new Employee{EmpId=3,EmpName="Anik",Department="Marketing",Designation="Junior Excutive"},
+                new Employee{EmpId=4,EmpName="Sabbir",Department="Marketing",Designation="Junior Excutive"},
+                new Employee{EmpId=5,EmpName="Tania",Department="HR",Designation="Senior Excutive"}
+        };
+
+
+        public List<EmployeeDetails> GetEmployeeDetails = new List<EmployeeDetails>()
+        {
+                new EmployeeDetails{EmpId=1,Details="Personal Reason1"},
+                new EmployeeDetails{EmpId=1,Details="Personal Reason1"},
+                new EmployeeDetails{EmpId=1,Details="Personal Reason1"},
+                new EmployeeDetails{EmpId=2,Details="Personal Reason2"},
+                new EmployeeDetails{EmpId=2,Details="Personal Reason2"},
+                new EmployeeDetails{EmpId=2,Details="Personal Reason2"},
+                new EmployeeDetails{EmpId=3,Details="Personal Reason3"},
+                new EmployeeDetails{EmpId=3,Details="Personal Reason3"},
+                new EmployeeDetails{EmpId=3,Details="Personal Reason3"},
+                new EmployeeDetails{EmpId=4,Details="Personal Reason4"},
+                new EmployeeDetails{EmpId=4,Details="Personal Reason4"},
+                new EmployeeDetails{EmpId=4,Details="Personal Reason4"},
+                new EmployeeDetails{EmpId=5,Details="Personal Reason5"},
+                new EmployeeDetails{EmpId=5,Details="Personal Reason5"},
+                new EmployeeDetails{EmpId=5,Details="Personal Reason5"},
+        };
+
+
+        public IActionResult PrintView()
+        {
+            string renderFromat = "PDF";
+            string extension = "pdf";
+            string mimetype = "application/pdf";
+            using var report = new LocalReport();
+            //  var dt = new DataTable();
+            var dt = GetEmployeeDemoList;
+            report.DataSources.Add(new ReportDataSource("EmployeeDemo_DS", dt));
+            var parameters = new[] { new ReportParameter("prm1", "RDLC Sub-Report Example") };
+            report.ReportPath = $"{this._webHostEnviorment.WebRootPath}\\Reports\\rptEmployeeBase.rdlc";
+            report.SetParameters(parameters);
+
+            //For Sub Type =======>>>
+            report.SubreportProcessing += new SubreportProcessingEventHandler(employeeSubReportProcessing);
+
+            var pdf = report.Render(renderFromat);
+            return File(pdf, mimetype, "report." + extension);
+        }
+
+        void employeeSubReportProcessing(object sender, SubreportProcessingEventArgs e)
+        {
+            int empId = Convert.ToInt32((e.Parameters["ID"].Values[0].ToString()));
+            var dt = departments;
+            var result = dt.FindAll(x => x.ID == empId);
+            ReportDataSource ds = new ReportDataSource("Department_DS", result);
+            e.DataSources.Add(ds);
+        }
+
+
     }
 }

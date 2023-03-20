@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="Dataset\Department_DS.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Department_DS.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Dataset\dsEmployee.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -17,9 +22,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>dsEmployeeDetails.xsd</DependentUpon>
     </Compile>
+    <Compile Update="Dataset\EmployeeDemo_DS.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EmployeeDemo_DS.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Dataset\Department_DS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Department_DS.Designer.cs</LastGenOutput>
+    </None>
     <None Update="Dataset\dsEmployee.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsEmployee.Designer.cs</LastGenOutput>
@@ -27,6 +41,10 @@
     <None Update="Dataset\dsEmployeeDetails.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsEmployeeDetails.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Dataset\EmployeeDemo_DS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmployeeDemo_DS.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

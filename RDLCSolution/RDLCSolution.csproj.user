@@ -6,10 +6,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Update="Dataset\Department_DS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Update="Dataset\dsEmployee.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Update="Dataset\dsEmployeeDetails.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Dataset\EmployeeDemo_DS.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
