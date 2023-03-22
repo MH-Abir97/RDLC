@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,36 @@ namespace RdlReport.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogger<HomeController> _logger;
+        private readonly IWebHostEnvironment _webHostEnviorment;
+
+        public HomeController(ILogger<HomeController> logger, IWebHostEnvironment webHostEnviorment)
+        {
+            _logger = logger;
+            _webHostEnviorment = webHostEnviorment;
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+        }
+
+        public DataTable RawMaterials_ExpImp()
+        {
+            string connnectionStr = "Data Source=192.168.4.9; Initial Catalog=Retail_Dev; User Id=sa; Password=sql@123;";
+            var dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(connnectionStr))
+            {
+                SqlCommand cmd = new SqlCommand("xRpt_hr_SalaryHistory_Temp", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                con.Close();
+            }
+            return dt;
+
+        }
+
+
+
+
         private List<EmployeeDemo> GetEmployeeDemoList = new List<EmployeeDemo>()
         {
                 new EmployeeDemo() {ID = 1, Name = "Sam", Gender ="male", Email="sam@gmail.com"},
@@ -38,19 +69,64 @@ namespace RdlReport.Controllers
                new Department() {ID = 4, Name = "Petroleum Engineering" },
         };
 
-        private readonly ILogger<HomeController> _logger;
-        private readonly IWebHostEnvironment _webHostEnviorment;
-
-        public HomeController(ILogger<HomeController> logger, IWebHostEnvironment webHostEnviorment)
-        {
-            _logger = logger;
-            _webHostEnviorment = webHostEnviorment;
-            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-        }
-
+       
         public IActionResult Index()
         {
             return View();
+        }
+
+        
+
+        public IActionResult ReportPrint()
+        {
+            var dt = RawMaterials_ExpImp();
+            var result = dt;
+          
+            string renderFromat = "PDF";
+            string extension = "pdf";
+            string mimetype = "application/pdf";
+            using var report = new LocalReport();
+            //  var dt = new DataTable();
+        
+            report.DataSources.Add(new ReportDataSource("rptSalaryHistory", dt));
+            var parameters = new[] { new ReportParameter("prm1", "RDLC Sub-Report Example") };
+            report.ReportPath = $"{this._webHostEnviorment.WebRootPath}\\Reports\\SalarySheetReport.rdlc";
+            report.SetParameters(parameters);
+
+            var dt2 = RawMaterials_ExpImp();
+            var result2 = dt.AsEnumerable().ToList();
+           
+
+            //For Sub Type =======>>>
+           // report.SubreportProcessing += new SubreportProcessingEventHandler(subReportProcessing1);
+
+            var pdf = report.Render(renderFromat);
+            return File(pdf, mimetype, "report." + extension);
+        }
+
+        void subReportProcessing1(object sender, SubreportProcessingEventArgs e)
+        {
+            var ID = Convert.ToInt32(e.Parameters[0].Values[0]);
+            //  var employeegroup = Employees.FindAll(x => x.ID == ID);
+
+            int empId = Convert.ToInt32((e.Parameters["CommercialInvoiceId"].Values[0].ToString()));
+            //var dt2 = GetEmployeeDetailsList().Select("EmpId=" + empId);
+            var dt = RawMaterials_ExpImp();
+            var result = dt.AsEnumerable().ToList();
+
+            int StudentId ;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                StudentId = Convert.ToInt32(dt.Rows[i]["CommercialInvoiceId"]);
+               
+
+            }
+
+
+           // var result1 = result.FindAll(x =>x.ItemArray[0]);
+            // var res = result;
+            ReportDataSource ds = new ReportDataSource("ExportReportChild", dt);
+            e.DataSources.Add(ds);
         }
         public IActionResult Print()
         {

@@ -14,25 +14,32 @@
     <Content Remove="Dataset\dsEmployeeDetails.xsc" />
     <Content Remove="Dataset\dsEmployeeDetails.xsd" />
     <Content Remove="Dataset\dsEmployeeDetails.xss" />
+    <Content Remove="wwwroot\Reports\ExportChildReport.rdlc" />
     <Content Remove="wwwroot\Reports\rptDepartment.rdlc" />
     <Content Remove="wwwroot\Reports\rptDepartmentBase.rdlc" />
     <Content Remove="wwwroot\Reports\rptEmployee.rdlc" />
     <Content Remove="wwwroot\Reports\rptEmployeeBase.rdlc" />
     <Content Remove="wwwroot\Reports\rptEmployeeDemoDetails.rdlc" />
     <Content Remove="wwwroot\Reports\rptEmployeeDetails.rdlc" />
+    <Content Remove="wwwroot\Reports\SalarySheetReport.rdlc" />
+    <Content Remove="wwwroot\Reports\xrptExportReport.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.17" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\Reports\ExportChildReport.rdlc" />
     <None Include="wwwroot\Reports\rptDepartment.rdlc" />
     <None Include="wwwroot\Reports\rptDepartmentBase.rdlc" />
     <None Include="wwwroot\Reports\rptEmployee.rdlc" />
     <None Include="wwwroot\Reports\rptEmployeeBase.rdlc" />
     <None Include="wwwroot\Reports\rptEmployeeDemoDetails.rdlc" />
     <None Include="wwwroot\Reports\rptEmployeeDetails.rdlc" />
+    <None Include="wwwroot\Reports\SalarySheetReport.rdlc" />
+    <None Include="wwwroot\Reports\xrptExportReport.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -51,8 +58,23 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Update="Dataset\dsExportReport.Designer.cs">
+      <DependentUpon>dsExportReport.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Dataset\EmployeeDemo_DS.Designer.cs">
       <DependentUpon>EmployeeDemo_DS.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dataset\ExportReportChild.Designer.cs">
+      <DependentUpon>ExportReportChild.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Dataset\dsSalaryHistory.Designer.cs">
+      <DependentUpon>dsSalaryHistory.xsd</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
@@ -74,9 +96,24 @@
       <LastGenOutput>dsEmployeeDetails.Designer.cs</LastGenOutput>
       <Generator>MSDataSetGenerator</Generator>
     </None>
+    <None Update="Dataset\dsExportReport.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>dsExportReport.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
     <None Update="Dataset\EmployeeDemo_DS.xsd">
       <SubType>Designer</SubType>
       <LastGenOutput>EmployeeDemo_DS.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Update="Dataset\ExportReportChild.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>ExportReportChild.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Update="Dataset\dsSalaryHistory.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>dsSalaryHistory.Designer.cs</LastGenOutput>
       <Generator>MSDataSetGenerator</Generator>
     </None>
   </ItemGroup>

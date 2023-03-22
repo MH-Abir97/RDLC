@@ -15,7 +15,16 @@
     <None Update="Dataset\dsEmployeeDetails.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Update="Dataset\dsExportReport.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Update="Dataset\EmployeeDemo_DS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Dataset\ExportReportChild.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Dataset\rptSalaryHistory.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

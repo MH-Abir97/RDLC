@@ -22,10 +22,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>dsEmployeeDetails.xsd</DependentUpon>
     </Compile>
+    <Compile Update="Dataset\dsExportReport.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dsExportReport.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Dataset\EmployeeDemo_DS.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>EmployeeDemo_DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Dataset\ExportReportChild.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ExportReportChild.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Dataset\rptSalaryHistory.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>rptSalaryHistory.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -42,9 +57,21 @@
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsEmployeeDetails.Designer.cs</LastGenOutput>
     </None>
+    <None Update="Dataset\dsExportReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsExportReport.Designer.cs</LastGenOutput>
+    </None>
     <None Update="Dataset\EmployeeDemo_DS.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>EmployeeDemo_DS.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Dataset\ExportReportChild.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExportReportChild.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Dataset\rptSalaryHistory.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rptSalaryHistory.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
